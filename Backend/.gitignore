@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+Venv/
+
+# IDEs
+.idea/             # JetBrains IDEs (PyCharm, IntelliJ)
+.vscode/           # VS Code
+*.sublime-project
+*.sublime-workspace
+
+# OS-specific
+.DS_Store          # macOS
+Thumbs.db          # Windows
+
+# Environment variables
+.env
+.flaskenv
+.env.local
+
+# FastAPI/Uvicorn
+.pytest_cache/
+.coverage
+
+# Database
+*.sqlite3
+*.db
+
+# Build artifacts and distributions
+dist/
+build/
+*.egg-info/
+
+k8s/secret.yaml

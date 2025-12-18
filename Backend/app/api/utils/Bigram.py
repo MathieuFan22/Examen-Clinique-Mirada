@@ -1,5 +1,10 @@
 import re
 from collections import defaultdict, Counter
+import os
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+corpus_path = os.path.join(current_dir, '..', '..', '..', '..', 'resources', 'bible.txt')
+
 
 # Chargement et nettoyage du corpus
 def load_corpus(file_path: str) -> list:
@@ -33,6 +38,9 @@ def train_bigram_model(tokens: list) -> dict:
 
     return model
 
+tokens = load_corpus(corpus_path)
+model = train_bigram_model(tokens)
+
 # Prédiction du mot suivant
 def predict_next_word(word: str, model: dict, top_k: int = 3) -> list:
     if word not in model:
@@ -62,6 +70,6 @@ def main():
             print("Suggestions :", ", ".join(suggestions))
         else:
             print("Aucune suggestion disponible.")
-            
+
 if __name__ == "__main__":
     main()

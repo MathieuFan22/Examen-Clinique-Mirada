@@ -1,5 +1,5 @@
 import './App.css'
-import FullEditor from './DraftWindow'
+import DraftWindow from './components/Editor/DraftWindow'
 
 function App() {
  
@@ -7,7 +7,7 @@ function App() {
   return (
    
       <div>
-        <FullEditor />
+        <DraftWindow />
       </div>
 
   )

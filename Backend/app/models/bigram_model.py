@@ -9,4 +9,4 @@ class BigramRequest(BaseModel):
     text: str = Field(..., description="Texte saisie par l'utilisateur")
 
 class BigramResponse(BaseModel):
-    word: Optional[List[str]] = Field(default=None,description="Suggestions de mot")
+    words: Optional[List[str]] = Field(default=None,description="Suggestions de mot")

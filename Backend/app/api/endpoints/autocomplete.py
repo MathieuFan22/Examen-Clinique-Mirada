@@ -15,7 +15,7 @@ def get_suggestions(request: AutocompleteRequest):
     """
     try:
         text = request.text
-        suggestions = autocomplete(text, vocabulary, top_k=5)
+        suggestions = autocomplete(text.lower(), vocabulary, top_k=5)
         print(suggestions)
         # Return the result
         return AutocompleteResponse(suggestions=suggestions)

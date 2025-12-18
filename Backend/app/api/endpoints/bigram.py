@@ -1,7 +1,7 @@
 from typing import Annotated
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException
 from fastapi.responses import JSONResponse
-
+from app.api.utils.Bigram import predict_next_word, model
 from app.models.bigram_model import BigramResponse, BigramRequest
 
 
@@ -16,7 +16,7 @@ def get_words(request: BigramRequest):
     """
     try:
         text = request.text
-        words = []
+        words = predict_next_word(text.lower(), model, top_k = 3)
         return BigramResponse(words=words)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"An unexpected error occurred: {e}")

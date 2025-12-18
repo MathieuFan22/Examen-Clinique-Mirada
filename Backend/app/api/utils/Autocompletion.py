@@ -6,7 +6,6 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 corpus_path = os.path.join(current_dir, '..', '..', '..', '..', 'resources', 'bible.txt')
 tokens = load_corpus(corpus_path)
 vocabulary = Counter(tokens)
-print('----------------------------------------------------')
 
 # Construction du vocabulaire (autocomplétion)
 def build_vocabulary(tokens: list) -> Counter:

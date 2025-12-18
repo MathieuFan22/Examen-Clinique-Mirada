@@ -47,20 +47,21 @@ class CorrecteurMalagasy:
 
 # --- TEST ---
 
-mon_correcteur = CorrecteurMalagasy('../resources/bible.txt')
+if __name__ == '__main__':
+    mon_correcteur = CorrecteurMalagasy('../resources/bible.txt')
 
-print("\n--- DEBUT DU TEST (tape 'stop' pour quitter) ---")
+    print("\n--- DEBUT DU TEST (tape 'stop' pour quitter) ---")
 
-while True:
-    mot_utilisateur = input("\nEntrez un mot malgache : ")
+    while True:
+        mot_utilisateur = input("\nEntrez un mot malgache : ")
 
-    if mot_utilisateur.lower() == 'stop':
-        print("Fin du test.")
-        break
+        if mot_utilisateur.lower() == 'stop':
+            print("Fin du test.")
+            break
 
-    suggestions = mon_correcteur.suggerer(mot_utilisateur)
+        suggestions = mon_correcteur.suggerer(mot_utilisateur)
 
-    if suggestions:
-        print(f"❌ Mot inconnu. Suggestions : {suggestions}")
-    else:
-        print(f"✅ '{mot_utilisateur}' est correct.")
+        if suggestions:
+            print(f"❌ Mot inconnu. Suggestions : {suggestions}")
+        else:
+            print(f"✅ '{mot_utilisateur}' est correct.")

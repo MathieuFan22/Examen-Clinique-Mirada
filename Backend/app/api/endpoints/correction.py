@@ -14,7 +14,7 @@ def check_spelling(request: CorrectionRequest):
         word_to_check = request.word
         
         # Appel à ta méthode 'suggerer' du fichier original
-        suggestions = correcteur_malagasy.suggerer(word_to_check)
+        suggestions = correcteur_malagasy.suggerer(word_to_check.lower())
         
         # Si la liste est vide, c'est que le mot est correct (selon ta logique)
         is_correct = len(suggestions) == 0

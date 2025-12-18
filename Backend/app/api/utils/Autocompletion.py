@@ -1,5 +1,12 @@
 from collections import Counter
-from Bigram import load_corpus
+from app.api.utils.Bigram import load_corpus
+import os
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+corpus_path = os.path.join(current_dir, '..', '..', '..', '..', 'resources', 'bible.txt')
+tokens = load_corpus(corpus_path)
+vocabulary = Counter(tokens)
+print('----------------------------------------------------')
 
 # Construction du vocabulaire (autocomplétion)
 def build_vocabulary(tokens: list) -> Counter:

@@ -39,7 +39,7 @@ body {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 0.5rem 1rem;
-  font-size: 0.7rem;
+  font-size: 1rem;
   width: 300px;
   background-color: #fff;
   transition: border-color 0.2s;
@@ -78,7 +78,17 @@ body {
   justify-content: center;
   transition: all 0.2s ease;
 }
+/* Force l'éditeur à ne pas prendre toute la largeur s'il n'y a qu'un mot */
+.draft-inline-container .public-DraftEditor-content {
+    display: inline-block;
+    min-width: 1px;
+}
 
+/* Optionnel : si vous voulez que la suggestion suive le texte 
+   exactement même au milieu d'un bloc */
+.draft-inline-container {
+    display: inline-block;
+}
 .toolbar-button:hover {
   background-color: #f0f0f0;
   border-color: #ccc;

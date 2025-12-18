@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Editor } from "draft-js";
+import  { useState } from "react";
+import { Editor, EditorState } from "draft-js";
 import { useEditorLogic } from "./useEditorLogic";
 import { Toolbar } from "./Toolbar";
 import { CUSTOM_STYLE_MAP } from "./constants";
@@ -21,6 +21,23 @@ const DraftWindow: React.FC = () => {
   const handleExport = () => {
     console.log("Exporting:", fileName);
   
+  };
+  const onType = (newState: EditorState) => {
+    const forbidden_start = /^(nb|np|mk|nk|dt|bp|sz)/i;
+
+    setEditorState(newState);
+
+    const plainText = newState
+      .getCurrentContent()
+      .getPlainText()
+      .split(/\s+/);
+
+    const last_word = plainText.at(-1);
+
+    if (last_word && forbidden_start.test(last_word)) {
+      console.log("Interdit : le mot commence par nb ou np");
+    }
+    
   };
 
   return (
@@ -50,7 +67,7 @@ const DraftWindow: React.FC = () => {
               <Editor
                 ref={editorRef}
                 editorState={editorState}
-                onChange={setEditorState}
+                onChange={onType}
                 placeholder="Commencez à taper ici..."
                 customStyleMap={CUSTOM_STYLE_MAP}
               />

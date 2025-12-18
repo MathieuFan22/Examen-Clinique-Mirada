@@ -62,6 +62,6 @@ def main():
             print("Suggestions :", ", ".join(suggestions))
         else:
             print("Aucune suggestion disponible.")
-
+            
 if __name__ == "__main__":
     main()

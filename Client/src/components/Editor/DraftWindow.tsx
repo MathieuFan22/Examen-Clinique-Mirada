@@ -20,7 +20,7 @@ const DraftWindow: React.FC = () => {
 
   const handleExport = () => {
     console.log("Exporting:", fileName);
-    // Add export logic here (e.g., convertToRaw)
+  
   };
 
   return (

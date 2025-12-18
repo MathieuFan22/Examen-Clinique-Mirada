@@ -5,8 +5,6 @@ from typing import Optional, List
 from pydantic import BaseModel, Field
 from fastapi import File
 
-
-
 class AutocompleteRequest(BaseModel):
     text: str = Field(..., description="Texte saisie par l'utilisateur")
 

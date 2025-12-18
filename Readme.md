@@ -65,6 +65,9 @@ Un éditeur de texte spécialisé pour la langue malagasy, intégrant des outils
 **Objectif du projet**
 Pallier le manque d'outils numériques pour la langue malagasy en proposant une solution capable de comprendre les spécificités de sa morphologie et de sa syntaxe.
 
+**Lien video Drive**
+[Cliquez ici](https://drive.google.com/drive/folders/1RahhuuJ32eTu3Z80faAaCBso1fLUq2lG?usp=sharing)
+
 **Lien util**
 https://github.com/Rohan29-AN/rakibolana_malagasy.git
 
